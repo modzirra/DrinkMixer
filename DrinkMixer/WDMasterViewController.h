@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface WDMasterViewController : UITableViewController
+{
+    NSMutableArray *_drinks;
+}
+
+@property (nonatomic, strong) NSMutableArray* drinks;
 
 @end

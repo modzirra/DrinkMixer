@@ -7,12 +7,12 @@
 //
 
 #import "WDMasterViewController.h"
-
 #import "WDDetailViewController.h"
 
 @interface WDMasterViewController () {
     NSMutableArray *_objects;
 }
+
 @end
 
 @implementation WDMasterViewController
@@ -30,6 +30,8 @@
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
+    
+    _drinks = [[NSMutableArray alloc] initWithObjects:@"Firecracker", @"Lemon Drop", @"Mojito", nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -57,15 +59,15 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _objects.count;
+    return [self.drinks count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
-    NSDate *object = _objects[indexPath.row];
-    cell.textLabel.text = [object description];
+    NSDate *object =_objects[indexPath.row];
+    cell.textLabel.text = [self.drinks objectAtIndex:indexPath.row];
     return cell;
 }
 
