@@ -114,9 +114,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="cra-N8-TIN"/>
                     <connections>
-                        <outlet property="directionsTextView" destination="rPC-Sj-L4K" id="rbE-0h-6yc"/>
-                        <outlet property="ingredientsTextView" destination="6f5-ba-3qb" id="H5d-kQ-OFH"/>
-                        <outlet property="nameTextField" destination="lUn-b7-nzb" id="2wy-Kz-HtX"/>
+                        <outlet property="directionsTextView" destination="rPC-Sj-L4K" id="UlJ-3Z-GKg"/>
+                        <outlet property="ingredientsTextView" destination="6f5-ba-3qb" id="TK6-4S-QwG"/>
+                        <outlet property="nameTextField" destination="lUn-b7-nzb" id="AUD-ux-oMp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>

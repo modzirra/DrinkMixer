@@ -22,7 +22,6 @@
 		73014F38182DA686005BBBB2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73014F17182DA686005BBBB2 /* UIKit.framework */; };
 		73014F40182DA686005BBBB2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 73014F3E182DA686005BBBB2 /* InfoPlist.strings */; };
 		73014F42182DA686005BBBB2 /* DrinkMixerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 73014F41182DA686005BBBB2 /* DrinkMixerTests.m */; };
-		736FBBCF182DBB7A00C15C9A /* DrinkArray.plist in Resources */ = {isa = PBXBuildFile; fileRef = 736FBBCE182DBB7A00C15C9A /* DrinkArray.plist */; };
 		736FBBD1182DD87600C15C9A /* DrinkDirections.plist in Resources */ = {isa = PBXBuildFile; fileRef = 736FBBD0182DD87600C15C9A /* DrinkDirections.plist */; };
 /* End PBXBuildFile section */
 
@@ -58,8 +57,8 @@
 		73014F3D182DA686005BBBB2 /* DrinkMixerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DrinkMixerTests-Info.plist"; sourceTree = "<group>"; };
 		73014F3F182DA686005BBBB2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		73014F41182DA686005BBBB2 /* DrinkMixerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrinkMixerTests.m; sourceTree = "<group>"; };
-		736FBBCE182DBB7A00C15C9A /* DrinkArray.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DrinkArray.plist; sourceTree = "<group>"; };
 		736FBBD0182DD87600C15C9A /* DrinkDirections.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DrinkDirections.plist; sourceTree = "<group>"; };
+		736FBBD2182DE28F00C15C9A /* DrinkConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrinkConstants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +118,7 @@
 		73014F19182DA686005BBBB2 /* DrinkMixer */ = {
 			isa = PBXGroup;
 			children = (
+				736FBBD2182DE28F00C15C9A /* DrinkConstants.h */,
 				73014F22182DA686005BBBB2 /* WDAppDelegate.h */,
 				73014F23182DA686005BBBB2 /* WDAppDelegate.m */,
 				73014F25182DA686005BBBB2 /* Main.storyboard */,
@@ -136,7 +136,6 @@
 			isa = PBXGroup;
 			children = (
 				736FBBD0182DD87600C15C9A /* DrinkDirections.plist */,
-				736FBBCE182DBB7A00C15C9A /* DrinkArray.plist */,
 				73014F1B182DA686005BBBB2 /* DrinkMixer-Info.plist */,
 				73014F1C182DA686005BBBB2 /* InfoPlist.strings */,
 				73014F1F182DA686005BBBB2 /* main.m */,
@@ -241,7 +240,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				73014F2F182DA686005BBBB2 /* Images.xcassets in Resources */,
-				736FBBCF182DBB7A00C15C9A /* DrinkArray.plist in Resources */,
 				73014F1E182DA686005BBBB2 /* InfoPlist.strings in Resources */,
 				736FBBD1182DD87600C15C9A /* DrinkDirections.plist in Resources */,
 				73014F27182DA686005BBBB2 /* Main.storyboard in Resources */,

@@ -7,6 +7,7 @@
 //
 
 #import "WDDetailViewController.h"
+#import "DrinkConstants.h"
 
 @interface WDDetailViewController ()
 - (void)configureView;
@@ -29,10 +30,10 @@
 - (void)configureView
 {
     // Update the user interface for the detail item.
-
-    if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
-    }
+    //Set up UI with selected drink
+    self.nameTextField.text = [self.drink objectForKey:NAME_KEY];
+    self.ingredientsTextView.text = [self.drink objectForKey:INGREDIENTS_KEY];
+    self.directionsTextView.text = [self.drink objectForKey:DIRECTIONS_KEY];
 }
 
 - (void)viewDidLoad
@@ -48,16 +49,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-//- (IBOutlet) ingredientsTextView
-//{
-//    return true;
-//}
-//- (IBOutlet) directionsTextView
-//{
-//    return true;
-//}
-//- (IBOutlet) nameTextField
-//{
-//    return true;
-//}
+-(void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
+
+
 @end
