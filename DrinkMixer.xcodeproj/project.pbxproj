@@ -22,7 +22,7 @@
 		73014F38182DA686005BBBB2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73014F17182DA686005BBBB2 /* UIKit.framework */; };
 		73014F40182DA686005BBBB2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 73014F3E182DA686005BBBB2 /* InfoPlist.strings */; };
 		73014F42182DA686005BBBB2 /* DrinkMixerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 73014F41182DA686005BBBB2 /* DrinkMixerTests.m */; };
-		73014F4C182DB5CF005BBBB2 /* DrinkArray.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73014F4B182DB5CF005BBBB2 /* DrinkArray.plist */; };
+		736FBBCF182DBB7A00C15C9A /* DrinkArray.plist in Resources */ = {isa = PBXBuildFile; fileRef = 736FBBCE182DBB7A00C15C9A /* DrinkArray.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +57,7 @@
 		73014F3D182DA686005BBBB2 /* DrinkMixerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DrinkMixerTests-Info.plist"; sourceTree = "<group>"; };
 		73014F3F182DA686005BBBB2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		73014F41182DA686005BBBB2 /* DrinkMixerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrinkMixerTests.m; sourceTree = "<group>"; };
-		73014F4B182DB5CF005BBBB2 /* DrinkArray.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DrinkArray.plist; sourceTree = "<group>"; };
+		736FBBCE182DBB7A00C15C9A /* DrinkArray.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DrinkArray.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,11 +133,11 @@
 		73014F1A182DA686005BBBB2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				736FBBCE182DBB7A00C15C9A /* DrinkArray.plist */,
 				73014F1B182DA686005BBBB2 /* DrinkMixer-Info.plist */,
 				73014F1C182DA686005BBBB2 /* InfoPlist.strings */,
 				73014F1F182DA686005BBBB2 /* main.m */,
 				73014F21182DA686005BBBB2 /* DrinkMixer-Prefix.pch */,
-				73014F4B182DB5CF005BBBB2 /* DrinkArray.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -238,7 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73014F2F182DA686005BBBB2 /* Images.xcassets in Resources */,
-				73014F4C182DB5CF005BBBB2 /* DrinkArray.plist in Resources */,
+				736FBBCF182DBB7A00C15C9A /* DrinkArray.plist in Resources */,
 				73014F1E182DA686005BBBB2 /* InfoPlist.strings in Resources */,
 				73014F27182DA686005BBBB2 /* Main.storyboard in Resources */,
 			);
@@ -471,6 +471,7 @@
 				73014F47182DA686005BBBB2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		73014F48182DA686005BBBB2 /* Build configuration list for PBXNativeTarget "DrinkMixerTests" */ = {
 			isa = XCConfigurationList;
@@ -479,6 +480,7 @@
 				73014F4A182DA686005BBBB2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
