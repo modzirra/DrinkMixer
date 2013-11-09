@@ -9,8 +9,20 @@
 #import <UIKit/UIKit.h>
 
 @interface WDDetailViewController : UIViewController
+{
+    @private
+        UITextView *_ingredientsTextView;
+        UITextView *_directionsTextView;
+        UITextField *_nameTextField;
+        NSDictionary *_drink;
+}
 
 @property (strong, nonatomic) id detailItem;
+@property (strong, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (nonatomic, strong) IBOutlet UITextView *ingredientsTextView;
+@property (nonatomic, strong) IBOutlet UITextView *directionsTextView;
+@property (nonatomic, strong) IBOutlet UITextField *nameTextField;
+@property (nonatomic, strong) NSDictionary *drink;
+
 @end

@@ -11,6 +11,7 @@
 
 @interface WDMasterViewController () {
     NSMutableArray *_objects;
+    NSMutableArray *_drinks;
 }
 
 @end
@@ -32,7 +33,7 @@
     self.navigationItem.rightBarButtonItem = addButton;
     
     //path to plist array
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"DrinkArray" ofType:@"plist"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"DrinkDirections" ofType:@"plist"];
     //load array from plist using path
     _drinks = [[NSMutableArray alloc] initWithContentsOfFile:path];
 }
@@ -69,8 +70,8 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
-    NSDate *object =_objects[indexPath.row];
-    cell.textLabel.text = [self.drinks objectAtIndex:indexPath.row];
+//    NSDate *object =_objects[indexPath.row];
+    cell.textLabel.text = [[self.drinks objectAtIndex:indexPath.row] objectForKey:@"name"];
     return cell;
 }
 

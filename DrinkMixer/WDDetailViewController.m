@@ -48,4 +48,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+//- (IBOutlet) ingredientsTextView
+//{
+//    return true;
+//}
+//- (IBOutlet) directionsTextView
+//{
+//    return true;
+//}
+//- (IBOutlet) nameTextField
+//{
+//    return true;
+//}
 @end
