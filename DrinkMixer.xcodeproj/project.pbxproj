@@ -22,6 +22,7 @@
 		73014F38182DA686005BBBB2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73014F17182DA686005BBBB2 /* UIKit.framework */; };
 		73014F40182DA686005BBBB2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 73014F3E182DA686005BBBB2 /* InfoPlist.strings */; };
 		73014F42182DA686005BBBB2 /* DrinkMixerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 73014F41182DA686005BBBB2 /* DrinkMixerTests.m */; };
+		73014F4C182DB5CF005BBBB2 /* DrinkArray.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73014F4B182DB5CF005BBBB2 /* DrinkArray.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		73014F3D182DA686005BBBB2 /* DrinkMixerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DrinkMixerTests-Info.plist"; sourceTree = "<group>"; };
 		73014F3F182DA686005BBBB2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		73014F41182DA686005BBBB2 /* DrinkMixerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrinkMixerTests.m; sourceTree = "<group>"; };
+		73014F4B182DB5CF005BBBB2 /* DrinkArray.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DrinkArray.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 				73014F1C182DA686005BBBB2 /* InfoPlist.strings */,
 				73014F1F182DA686005BBBB2 /* main.m */,
 				73014F21182DA686005BBBB2 /* DrinkMixer-Prefix.pch */,
+				73014F4B182DB5CF005BBBB2 /* DrinkArray.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73014F2F182DA686005BBBB2 /* Images.xcassets in Resources */,
+				73014F4C182DB5CF005BBBB2 /* DrinkArray.plist in Resources */,
 				73014F1E182DA686005BBBB2 /* InfoPlist.strings in Resources */,
 				73014F27182DA686005BBBB2 /* Main.storyboard in Resources */,
 			);

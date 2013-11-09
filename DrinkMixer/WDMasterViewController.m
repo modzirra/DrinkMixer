@@ -31,7 +31,10 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
     
-    _drinks = [[NSMutableArray alloc] initWithObjects:@"Firecracker", @"Lemon Drop", @"Mojito", nil];
+    //path to plist array
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"DrinkArray" ofType:@"plist"];
+    //load array from plist using path
+    _drinks = [[NSMutableArray alloc] initWithContentsOfFile:path];
 }
 
 - (void)didReceiveMemoryWarning
