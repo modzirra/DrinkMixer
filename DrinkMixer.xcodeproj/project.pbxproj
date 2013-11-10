@@ -23,6 +23,7 @@
 		73014F40182DA686005BBBB2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 73014F3E182DA686005BBBB2 /* InfoPlist.strings */; };
 		73014F42182DA686005BBBB2 /* DrinkMixerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 73014F41182DA686005BBBB2 /* DrinkMixerTests.m */; };
 		736FBBD1182DD87600C15C9A /* DrinkDirections.plist in Resources */ = {isa = PBXBuildFile; fileRef = 736FBBD0182DD87600C15C9A /* DrinkDirections.plist */; };
+		736FBBD5182F3C0700C15C9A /* WDAddDrinkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 736FBBD4182F3C0700C15C9A /* WDAddDrinkViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		73014F41182DA686005BBBB2 /* DrinkMixerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrinkMixerTests.m; sourceTree = "<group>"; };
 		736FBBD0182DD87600C15C9A /* DrinkDirections.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DrinkDirections.plist; sourceTree = "<group>"; };
 		736FBBD2182DE28F00C15C9A /* DrinkConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrinkConstants.h; sourceTree = "<group>"; };
+		736FBBD3182F3C0700C15C9A /* WDAddDrinkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDAddDrinkViewController.h; sourceTree = "<group>"; };
+		736FBBD4182F3C0700C15C9A /* WDAddDrinkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDAddDrinkViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,8 @@
 				73014F29182DA686005BBBB2 /* WDMasterViewController.m */,
 				73014F2B182DA686005BBBB2 /* WDDetailViewController.h */,
 				73014F2C182DA686005BBBB2 /* WDDetailViewController.m */,
+				736FBBD3182F3C0700C15C9A /* WDAddDrinkViewController.h */,
+				736FBBD4182F3C0700C15C9A /* WDAddDrinkViewController.m */,
 				736FBBD2182DE28F00C15C9A /* DrinkConstants.h */,
 				73014F2E182DA686005BBBB2 /* Images.xcassets */,
 				73014F1A182DA686005BBBB2 /* Supporting Files */,
@@ -263,6 +268,7 @@
 			files = (
 				73014F2D182DA686005BBBB2 /* WDDetailViewController.m in Sources */,
 				73014F20182DA686005BBBB2 /* main.m in Sources */,
+				736FBBD5182F3C0700C15C9A /* WDAddDrinkViewController.m in Sources */,
 				73014F24182DA686005BBBB2 /* WDAppDelegate.m in Sources */,
 				73014F2A182DA686005BBBB2 /* WDMasterViewController.m in Sources */,
 			);
