@@ -118,7 +118,6 @@
 		73014F19182DA686005BBBB2 /* DrinkMixer */ = {
 			isa = PBXGroup;
 			children = (
-				736FBBD2182DE28F00C15C9A /* DrinkConstants.h */,
 				73014F22182DA686005BBBB2 /* WDAppDelegate.h */,
 				73014F23182DA686005BBBB2 /* WDAppDelegate.m */,
 				73014F25182DA686005BBBB2 /* Main.storyboard */,
@@ -126,6 +125,7 @@
 				73014F29182DA686005BBBB2 /* WDMasterViewController.m */,
 				73014F2B182DA686005BBBB2 /* WDDetailViewController.h */,
 				73014F2C182DA686005BBBB2 /* WDDetailViewController.m */,
+				736FBBD2182DE28F00C15C9A /* DrinkConstants.h */,
 				73014F2E182DA686005BBBB2 /* Images.xcassets */,
 				73014F1A182DA686005BBBB2 /* Supporting Files */,
 			);
