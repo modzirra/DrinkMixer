@@ -61,7 +61,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="aIA-Nd-kTd">
                             <connections>
                                 <action selector="addButtonPressed:" destination="pGg-6v-bdr" id="Md9-e5-TM3"/>
-                                <segue destination="Ah7-4n-0Wa" kind="modal" identifier="addItem" id="7VS-O3-FSI"/>
+                                <segue destination="Ah7-4n-0Wa" kind="custom" identifier="addItem" id="7VS-O3-FSI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

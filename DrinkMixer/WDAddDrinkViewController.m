@@ -27,6 +27,17 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+
+    
+    //not working
+    UIBarButtonItem *cancelButton = self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+                                                                                          target:self
+                                                                                          action:@selector(cancel:)];
+    
+    UIBarButtonItem *saveButton = self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave
+                                                                                           target:self
+                                                                                           action:@selector(save:)];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,4 +46,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction) save:(id)sender
+{
+    NSLog(@"Save pressed!");
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction) cancel:(id)sender
+{
+    NSLog(@"Cancel pressed!");
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

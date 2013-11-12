@@ -11,7 +11,8 @@
 #import "WDAddDrinkViewController.h"
 #import "DrinkConstants.h"
 
-@interface WDMasterViewController () {
+@interface WDMasterViewController ()
+{
     NSMutableArray *_objects;
     NSMutableArray *_drinks;
     UIBarButtonItem *_addButton;
@@ -32,13 +33,16 @@
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addButtonPressed:)];
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                               target:self
+                                                                               action:@selector(addButtonPressed:)];
     self.navigationItem.rightBarButtonItem = addButton;
     
     //path to plist array
     NSString *path = [[NSBundle mainBundle] pathForResource:@"DrinkDirections" ofType:@"plist"];
     //load array from plist using path
     _drinks = [[NSMutableArray alloc] initWithContentsOfFile:path];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,16 +54,13 @@
 #pragma  mark - Actions
 - (void)addButtonPressed:(id)sender
 {
-    if (!_objects) {
+    if (!_objects)
+    {
         _objects = [[NSMutableArray alloc] init];
     }
     [_objects insertObject:[NSDate date] atIndex:0];
 //    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
 //    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-        NSLog(@"Add button pressed!");
-
-//    WDAddDrinkViewController *addViewController = [[WDAddDrinkViewController alloc] initWithNibName:@"WDDetailViewController" bundle:nil];
-//    [self presentViewController:addViewController animated:YES completion:nil];
     [self performSegueWithIdentifier:(@"addItem") sender:self];
 }
 
@@ -109,7 +110,16 @@
         NSDate *object = _objects[indexPath.row];
         [[segue destinationViewController] setDetailItem:object];
         [[segue destinationViewController] setDrink:[self.drinks objectAtIndex:indexPath.row]];
-        NSLog(@"Content of Drink is: %@", [self.drinks objectAtIndex:indexPath.row]);
+    }
+    if ([[segue identifier] isEqualToString:@"addItem"])
+    {
+
+//        WDAddDrinkViewController *addVC = segue.destinationViewController;
+//        
+//        NSLog(@"addVC is set to %@", addVC);
+//        
+//        addVC.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel:)];
+//        addVC.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save:)];
     }
 }
 

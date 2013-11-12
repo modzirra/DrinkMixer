@@ -11,4 +11,7 @@
 
 @interface WDAddDrinkViewController : WDDetailViewController
 
+- (IBAction) save:(id)sender;
+- (IBAction) cancel:(id)sender;
+
 @end
