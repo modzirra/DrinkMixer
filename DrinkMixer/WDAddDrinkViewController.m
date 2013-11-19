@@ -27,16 +27,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    //not working
     UIBarButtonItem *cancelButton = self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
-                                                                                          target:self
-                                                                                          action:@selector(cancel:)];
+                                                                                                                          target:self
+                                                                                                                          action:@selector(cancel:)];
     
     UIBarButtonItem *saveButton = self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave
-                                                                                           target:self
-                                                                                           action:@selector(save:)];
+                                                                                                                         target:self
+                                                                                                                         action:@selector(save:)];
     
-    self.navigationItem.title = @"Blah";
     self.navigationItem.rightBarButtonItem = cancelButton;
     self.navigationItem.leftBarButtonItem = saveButton;
 }
@@ -50,12 +48,12 @@
 - (IBAction) save:(id)sender
 {
     NSLog(@"Save pressed!");
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction) cancel:(id)sender
 {
     NSLog(@"Cancel pressed!");
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end
