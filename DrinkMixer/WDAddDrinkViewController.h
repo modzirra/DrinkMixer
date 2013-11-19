@@ -14,4 +14,6 @@
 - (IBAction) save:(id)sender;
 - (IBAction) cancel:(id)sender;
 
+@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
+
 @end

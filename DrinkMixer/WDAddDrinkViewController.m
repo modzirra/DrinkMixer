@@ -37,6 +37,8 @@
     
     self.navigationItem.rightBarButtonItem = cancelButton;
     self.navigationItem.leftBarButtonItem = saveButton;
+    
+    _scrollView.contentSize = self.view.frame.size;
 }
 
 - (void)didReceiveMemoryWarning
