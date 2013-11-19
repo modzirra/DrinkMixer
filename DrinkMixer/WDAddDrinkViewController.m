@@ -27,8 +27,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-
-    
     //not working
     UIBarButtonItem *cancelButton = self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
                                                                                           target:self
@@ -37,7 +35,10 @@
     UIBarButtonItem *saveButton = self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave
                                                                                            target:self
                                                                                            action:@selector(save:)];
-
+    
+    self.navigationItem.title = @"Blah";
+    self.navigationItem.rightBarButtonItem = cancelButton;
+    self.navigationItem.leftBarButtonItem = saveButton;
 }
 
 - (void)didReceiveMemoryWarning

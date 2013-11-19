@@ -42,7 +42,6 @@
     NSString *path = [[NSBundle mainBundle] pathForResource:@"DrinkDirections" ofType:@"plist"];
     //load array from plist using path
     _drinks = [[NSMutableArray alloc] initWithContentsOfFile:path];
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,8 +58,10 @@
         _objects = [[NSMutableArray alloc] init];
     }
     [_objects insertObject:[NSDate date] atIndex:0];
+    
 //    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
 //    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    
     [self performSegueWithIdentifier:(@"addItem") sender:self];
 }
 
@@ -110,16 +111,6 @@
         NSDate *object = _objects[indexPath.row];
         [[segue destinationViewController] setDetailItem:object];
         [[segue destinationViewController] setDrink:[self.drinks objectAtIndex:indexPath.row]];
-    }
-    if ([[segue identifier] isEqualToString:@"addItem"])
-    {
-
-//        WDAddDrinkViewController *addVC = segue.destinationViewController;
-//        
-//        NSLog(@"addVC is set to %@", addVC);
-//        
-//        addVC.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel:)];
-//        addVC.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save:)];
     }
 }
 

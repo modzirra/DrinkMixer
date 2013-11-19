@@ -30,10 +30,10 @@
 - (void)configureView
 {
     // Update the user interface for the detail item.
-    //Set up UI with selected drink
-    self.nameTextField.text = [self.drink objectForKey:NAME_KEY];
-    self.ingredientsTextView.text = [self.drink objectForKey:INGREDIENTS_KEY];
-    self.directionsTextView.text = [self.drink objectForKey:DIRECTIONS_KEY];
+        //Set up UI with selected drink
+        self.nameTextField.text = [self.drink objectForKey:NAME_KEY];
+        self.ingredientsTextView.text = [self.drink objectForKey:INGREDIENTS_KEY];
+        self.directionsTextView.text = [self.drink objectForKey:DIRECTIONS_KEY];
 }
 
 - (void)viewDidLoad
