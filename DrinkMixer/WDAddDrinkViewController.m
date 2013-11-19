@@ -76,7 +76,7 @@
     self.keyboardIsVisible = YES;
 }
 
-- (IBAction) keyboardDidHide:(id)sender
+- (void) keyboardDidHide:(NSNotification *)notif
 {
     NSLog(@"keyboard did hide called");
     self.keyboardIsVisible = NO;
