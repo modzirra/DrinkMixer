@@ -23,6 +23,22 @@
     return self;
 }
 
+- (void)viewWillAppear: (BOOL) animated
+{
+    [super viewWillAppear:animated];
+    
+    NSLog(@"Registering for keyboard events");
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardDidShow:)
+                                                 name:UIKeyboardDidShowNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardDidHide:)
+                                                 name:UIKeyboardDidHideNotification
+                                               object:nil];
+    _keyboardIsVisible = NO;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -41,12 +57,32 @@
     _scrollView.contentSize = self.view.frame.size;
 }
 
+- (void)viewDidDisappear:(BOOL)animated
+{
+    NSLog(@"Unregistering for keyboard events");
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Keyboard Handlers
+- (void) keyboardDidShow:(NSNotification *)notif
+{
+    NSLog(@"keyboard did show called");
+    self.keyboardIsVisible = YES;
+}
+
+- (IBAction) keyboardDidHide:(id)sender
+{
+    NSLog(@"keyboard did hide called");
+    self.keyboardIsVisible = NO;
+}
+
+#pragma mark - Navigation Toolbar Buttons
 - (IBAction) save:(id)sender
 {
     NSLog(@"Save pressed!");

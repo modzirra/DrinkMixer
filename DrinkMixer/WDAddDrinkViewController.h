@@ -13,7 +13,10 @@
 
 - (IBAction) save:(id)sender;
 - (IBAction) cancel:(id)sender;
+- (void) keyboardDidShow:(NSNotification *) notif;
+- (void) keyboardDidHide:(NSNotification *) notif;
 
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
+@property BOOL keyboardIsVisible;
 
 @end
