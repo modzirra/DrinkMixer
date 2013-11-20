@@ -72,14 +72,48 @@
 #pragma mark - Keyboard Handlers
 - (void) keyboardDidShow:(NSNotification *)notif
 {
-    NSLog(@"keyboard did show called");
-    self.keyboardIsVisible = YES;
+    //check to see if keyboard is already up
+    if (_keyboardIsVisible == YES)
+    {
+        NSLog(@"%@", @"Keyboard is already visible.  Ignoring notification.");
+        return;
+    }
+    //the keyboard wasn't visible before
+    NSLog(@"Resizing smaller for keyboard");
+    
+    //get the origin of the keyboard when it finishes animating.
+    NSDictionary *info = [notif userInfo];
+    
+    //get the keyboard size from the NSDict
+    NSValue *aValue = [info objectForKey:UIKeyboardFrameEndUserInfoKey];
+    
+    //Get the top of the keyboard in view's coordinate system.
+    //set the bottom of the scroll view to line up with the top of the keyboard.
+    CGRect keyboardRect = [aValue CGRectValue];
+    keyboardRect = [self.view convertRect:keyboardRect fromView:nil];
+    CGFloat keyboardTop = keyboardRect.origin.y;
+    
+    //Resize the scroll view to make room for the keyboard
+    CGRect viewFrame = self.view.bounds;
+    viewFrame.size.height = keyboardTop - self.view.bounds.origin.y;
+    
+    self.scrollView.frame = viewFrame;
+    
+    _keyboardIsVisible = YES;
 }
 
 - (void) keyboardDidHide:(NSNotification *)notif
 {
-    NSLog(@"keyboard did hide called");
-    self.keyboardIsVisible = NO;
+    //The keyboard was visible
+    if (!_keyboardIsVisible)
+    {
+        NSLog(@"%@", @"Keyboard already hidden.  Ignoring notification.");
+        return;
+    }
+    //Resize the scroll view back to the full size of the view
+    NSLog(@"%@", @"Resizing bigger with no keyboard");
+    self.scrollView.frame = self.view.bounds;
+    _keyboardIsVisible = NO;
 }
 
 #pragma mark - Navigation Toolbar Buttons
