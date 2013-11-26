@@ -112,6 +112,10 @@
         [[segue destinationViewController] setDetailItem:object];
         [[segue destinationViewController] setDrink:[self.drinks objectAtIndex:indexPath.row]];
     }
+    if ([[segue identifier] isEqualToString:@"addItem"])
+    {
+        [[segue destinationViewController] setDrinks:self.drinks];
+    }
 }
 
 @end

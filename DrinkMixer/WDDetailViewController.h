@@ -25,6 +25,6 @@
 @property (nonatomic, strong) IBOutlet UITextView *directionsTextView;
 @property (nonatomic, strong) IBOutlet UITextField *nameTextField;
 @property (nonatomic, strong) NSDictionary *drink;
-@property (nonatomic, strong) NSMutableArray* drinks;
+@property (nonatomic, strong) NSMutableArray *drinks;
 
 @end

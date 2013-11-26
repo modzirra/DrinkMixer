@@ -13,7 +13,7 @@
     UIBarButtonItem *addButton_;
 }
 
-@property (nonatomic, strong) NSMutableArray* drinks;
+@property (nonatomic, strong) NSMutableArray *drinks;
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *addButton;
 
 -(IBAction) addButtonPressed: (id)sender;

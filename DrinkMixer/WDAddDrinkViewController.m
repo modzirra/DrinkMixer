@@ -51,8 +51,8 @@
                                                                                                                          target:self
                                                                                                                          action:@selector(save:)];
     
-    self.navigationItem.rightBarButtonItem = cancelButton;
-    self.navigationItem.leftBarButtonItem = saveButton;
+    self.navigationItem.leftBarButtonItem = cancelButton;
+    self.navigationItem.rightBarButtonItem = saveButton;
     
     _scrollView.contentSize = self.view.frame.size;
 }
@@ -119,7 +119,23 @@
 #pragma mark - Navigation Toolbar Buttons
 - (IBAction) save:(id)sender
 {
-    NSLog(@"Save pressed!");
+    NSLog(@"count is: %d at first", self.drinks.count);
+    //create a new drink dict
+    self.drink = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"value1",@"name",@"value2",@"ingredients",@"value3",@"directions",nil];
+    
+    //get info from fields and assign to the new drink dict
+    self.drink[@"name"] = self.nameTextField.text;
+    self.drink[@"ingredients"] = self.ingredientsTextView.text;
+    self.drink[@"directions"] = self.directionsTextView.text;
+    
+    //add the new drink to the temp array
+    [self.drinks addObject:self.drink];
+    
+    NSLog(@"the new drink name is: %@", self.drink[@"name"]);
+    NSLog(@"count is now: %d", self.drinks.count);
+    NSLog(@"the last item in drinks is now: %@", self.drinks.lastObject);
+    
+    //dismiss pushed view
     [self.navigationController popViewControllerAnimated:YES];
 }
 
