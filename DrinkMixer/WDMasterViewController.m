@@ -44,6 +44,12 @@
     _drinks = [[NSMutableArray alloc] initWithContentsOfFile:path];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    NSLog(@"drinks count is now: %d", _drinks.count);
+    [self.tableView reloadData];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

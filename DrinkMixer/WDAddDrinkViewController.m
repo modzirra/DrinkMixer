@@ -135,6 +135,8 @@
     NSLog(@"count is now: %d", self.drinks.count);
     NSLog(@"the last item in drinks is now: %@", self.drinks.lastObject);
     
+    super.drinks = self.drinks;
+    
     //dismiss pushed view
     [self.navigationController popViewControllerAnimated:YES];
 }
