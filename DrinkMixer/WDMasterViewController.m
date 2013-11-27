@@ -32,10 +32,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
-                                                                               target:self
-                                                                               action:@selector(addButtonPressed:)];
+    
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addButtonPressed:)];
     self.navigationItem.rightBarButtonItem = addButton;
     
     //path to plist array
@@ -59,15 +57,13 @@
 #pragma  mark - Actions
 - (void)addButtonPressed:(id)sender
 {
-    if (!_objects)
+    if (!self.drinks)
     {
-        _objects = [[NSMutableArray alloc] init];
+        self.drinks = [[NSMutableArray alloc] init];
     }
-    [_objects insertObject:[NSDate date] atIndex:0];
-    
-//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-//    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-    
+    NSDictionary *drink = [[NSDictionary alloc] initWithObjectsAndKeys:@"",@"directions",@"",@"name",@"",@"ingredients", nil];
+    [self.drinks insertObject:drink atIndex:self.drinks.count];
+
     [self performSegueWithIdentifier:(@"addItem") sender:self];
 }
 

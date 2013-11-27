@@ -79,8 +79,6 @@
         return;
     }
     //the keyboard wasn't visible before
-    NSLog(@"Resizing smaller for keyboard");
-    
     //get the origin of the keyboard when it finishes animating.
     NSDictionary *info = [notif userInfo];
     
@@ -111,7 +109,6 @@
         return;
     }
     //Resize the scroll view back to the full size of the view
-    NSLog(@"%@", @"Resizing bigger with no keyboard");
     self.scrollView.frame = self.view.bounds;
     _keyboardIsVisible = NO;
 }
@@ -119,23 +116,26 @@
 #pragma mark - Navigation Toolbar Buttons
 - (IBAction) save:(id)sender
 {
-    NSLog(@"count is: %d at first", self.drinks.count);
-    //create a new drink dict
-    self.drink = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"value1",@"name",@"value2",@"ingredients",@"value3",@"directions",nil];
+    //Remove placeholder drink in drinks array
+    [self.drinks removeLastObject];
     
-    //get info from fields and assign to the new drink dict
-    self.drink[@"name"] = self.nameTextField.text;
-    self.drink[@"ingredients"] = self.ingredientsTextView.text;
-    self.drink[@"directions"] = self.directionsTextView.text;
+    //create temporary dict
+    NSMutableDictionary *newDrink = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"value1", @"ingredients", @"value2", @"name", @"value3", @"directions", nil];
     
-    //add the new drink to the temp array
-    [self.drinks addObject:self.drink];
+    //get info from fields and assign to the new drink property
+    [newDrink setObject:self.ingredientsTextView.text forKey:@"ingredients"];
+    [newDrink setObject:self.nameTextField.text forKey:@"name"];
+    [newDrink setObject:self.directionsTextView.text forKey:@"directions"];
     
-    NSLog(@"the new drink name is: %@", self.drink[@"name"]);
-    NSLog(@"count is now: %d", self.drinks.count);
-    NSLog(@"the last item in drinks is now: %@", self.drinks.lastObject);
+    //add new dict to drinks array
+    [self.drinks addObject:newDrink];
     
+    NSLog(@"last drink is now: %@", self.drink);
+    NSLog(@"last drinks object is now: %@", self.drinks.lastObject);
+    
+    //update the drinks list on master view
     super.drinks = self.drinks;
+    NSLog(@"last super drinks object is now: %@", super.drinks.lastObject);
     
     //dismiss pushed view
     [self.navigationController popViewControllerAnimated:YES];
