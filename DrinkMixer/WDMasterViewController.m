@@ -44,7 +44,6 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    NSLog(@"drinks count is now: %d", _drinks.count);
     [self.tableView reloadData];
 }
 

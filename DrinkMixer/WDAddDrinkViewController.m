@@ -130,12 +130,8 @@
     //add new dict to drinks array
     [self.drinks addObject:newDrink];
     
-    NSLog(@"last drink is now: %@", self.drink);
-    NSLog(@"last drinks object is now: %@", self.drinks.lastObject);
-    
     //update the drinks list on master view
     super.drinks = self.drinks;
-    NSLog(@"last super drinks object is now: %@", super.drinks.lastObject);
     
     //dismiss pushed view
     [self.navigationController popViewControllerAnimated:YES];
@@ -143,7 +139,8 @@
 
 - (IBAction) cancel:(id)sender
 {
-    NSLog(@"Cancel pressed!");
+    //remove placeholder drink
+    [self.drinks removeLastObject];
     [self.navigationController popViewControllerAnimated:YES];
 }
 @end
