@@ -54,5 +54,13 @@
     [super viewWillAppear:animated];
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"editDrink"])
+    {
+        //[[segue destinationViewController] setDetailItem:self.drink];
+        [[segue destinationViewController] setDrink:self.drink];
+    }
+}
 
 @end

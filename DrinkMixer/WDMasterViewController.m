@@ -13,7 +13,7 @@
 
 @interface WDMasterViewController ()
 {
-    NSMutableArray *_objects;
+    //NSMutableArray *_objects;
     NSMutableArray *_drinks;
     UIBarButtonItem *_addButton;
 }
@@ -112,19 +112,24 @@
     }
 }
 
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     if ([[segue identifier] isEqualToString:@"showDetail"])
     {
-        NSDate *object = _objects[indexPath.row];
-        [[segue destinationViewController] setDetailItem:object];
-        [[segue destinationViewController] setDrink:[self.drinks objectAtIndex:indexPath.row]];
+        NSDictionary *pickedDrink = _drinks[indexPath.row];
+        [[segue destinationViewController] setDetailItem:pickedDrink];
+        [[segue destinationViewController] setDrink:[_drinks objectAtIndex:indexPath.row]];
     }
     if ([[segue identifier] isEqualToString:@"addItem"])
     {
         [[segue destinationViewController] setDrinks:self.drinks];
     }
-}
+  }
 
 @end
