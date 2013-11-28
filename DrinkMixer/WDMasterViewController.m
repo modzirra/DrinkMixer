@@ -40,6 +40,9 @@
     NSString *path = [[NSBundle mainBundle] pathForResource:@"DrinkDirections" ofType:@"plist"];
     //load array from plist using path
     _drinks = [[NSMutableArray alloc] initWithContentsOfFile:path];
+    
+    //add background notifier for saving to disk
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -64,6 +67,13 @@
     [self.drinks insertObject:drink atIndex:self.drinks.count];
     
     [self performSegueWithIdentifier:(@"addItem") sender:self];
+}
+
+- (void) applicationDidEnterBackground: (NSNotification *)notification
+{
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"DrinkDirections" ofType:@"plist"];
+    NSLog(@"Saving");
+    [self.drinks writeToFile:path atomically:YES];
 }
 
 #pragma mark - Table View
@@ -97,10 +107,8 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_objects removeObjectAtIndex:indexPath.row];
+        [self.drinks removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }
 }
 

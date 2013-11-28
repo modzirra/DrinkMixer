@@ -27,7 +27,6 @@
 {
     [super viewWillAppear:animated];
     
-    NSLog(@"Registering for keyboard events");
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardDidShow:)
                                                  name:UIKeyboardDidShowNotification
@@ -59,7 +58,6 @@
 
 - (void)viewDidDisappear:(BOOL)animated
 {
-    NSLog(@"Unregistering for keyboard events");
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 

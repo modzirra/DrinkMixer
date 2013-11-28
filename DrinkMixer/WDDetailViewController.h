@@ -20,7 +20,6 @@
 
 @property (strong, nonatomic) id detailItem;
 @property (strong, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
-
 @property (nonatomic, strong) IBOutlet UITextView *ingredientsTextView;
 @property (nonatomic, strong) IBOutlet UITextView *directionsTextView;
 @property (nonatomic, strong) IBOutlet UITextField *nameTextField;
