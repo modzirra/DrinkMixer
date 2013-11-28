@@ -62,7 +62,7 @@
     }
     NSDictionary *drink = [[NSDictionary alloc] initWithObjectsAndKeys:@"",@"directions",@"",@"name",@"",@"ingredients", nil];
     [self.drinks insertObject:drink atIndex:self.drinks.count];
-
+    
     [self performSegueWithIdentifier:(@"addItem") sender:self];
 }
 

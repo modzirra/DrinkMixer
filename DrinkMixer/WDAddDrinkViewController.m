@@ -130,8 +130,16 @@
     //add new dict to drinks array
     [self.drinks addObject:newDrink];
     
+    //sort drinks with new item by alpha
+    NSSortDescriptor *nameSorter = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    NSArray *sortDescriptors = @[nameSorter];
+    NSArray *sortedArray = [self.drinks sortedArrayUsingDescriptors:sortDescriptors];
+    
+    //empty old drinks array
+    [super.drinks removeAllObjects];
+    
     //update the drinks list on master view
-    super.drinks = self.drinks;
+    [super.drinks addObjectsFromArray:sortedArray];
     
     //dismiss pushed view
     [self.navigationController popViewControllerAnimated:YES];
