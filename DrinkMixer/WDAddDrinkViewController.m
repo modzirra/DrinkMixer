@@ -41,6 +41,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
 	// Do any additional setup after loading the view.
     UIBarButtonItem *cancelButton = self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
                                                                                                                           target:self
@@ -109,7 +110,7 @@
     //Resize the scroll view back to the full size of the view
     self.scrollView.frame = self.view.bounds;
     _keyboardIsVisible = NO;
-}
+} 
 
 #pragma mark - Navigation Toolbar Buttons
 - (IBAction) save:(id)sender
@@ -138,6 +139,11 @@
     
     //update the drinks list on master view
     [super.drinks addObjectsFromArray:sortedArray];
+    
+    //save new plist data to custom plist in documents directory
+    NSString *documents = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *filePath = [NSString stringWithFormat:@"%@/drinks.plist", documents];
+    [sortedArray writeToFile:filePath atomically:YES];
     
     //dismiss pushed view
     [self.navigationController popViewControllerAnimated:YES];

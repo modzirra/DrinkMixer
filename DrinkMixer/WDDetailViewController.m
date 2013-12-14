@@ -58,7 +58,6 @@
 {
     if ([[segue identifier] isEqualToString:@"editDrink"])
     {
-        //[[segue destinationViewController] setDetailItem:self.drink];
         [[segue destinationViewController] setDrink:self.drink];
     }
 }

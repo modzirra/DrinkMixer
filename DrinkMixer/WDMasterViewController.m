@@ -13,7 +13,6 @@
 
 @interface WDMasterViewController ()
 {
-    //NSMutableArray *_objects;
     NSMutableArray *_drinks;
     UIBarButtonItem *_addButton;
 }
@@ -36,10 +35,22 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addButtonPressed:)];
     self.navigationItem.rightBarButtonItem = addButton;
     
-    //path to plist array
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"DrinkDirections" ofType:@"plist"];
-    //load array from plist using path
-    _drinks = [[NSMutableArray alloc] initWithContentsOfFile:path];
+    //path to initplist array
+    NSString *initPath = [[NSBundle mainBundle] pathForResource:@"DrinkDirections" ofType:@"plist"];
+    
+    //path to user plist array
+    NSString *documents = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *filePath = [NSString stringWithFormat:@"%@/drinks.plist", documents];
+
+    
+    if (_drinks == nil) {
+        //first time loading app
+        //load array from init plist using path
+        _drinks = [[NSMutableArray alloc] initWithContentsOfFile:initPath];
+    } else {
+        //otherwise, load array from user plist
+        _drinks = [[NSMutableArray alloc] initWithContentsOfFile:filePath];
+    }
     
     //add background notifier for saving to disk
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
