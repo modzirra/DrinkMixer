@@ -10,13 +10,6 @@
 #import "DrinkConstants.h"
 
 @interface WDDetailViewController : UIViewController
-{
-    @private
-        UITextView *_ingredientsTextView;
-        UITextView *_directionsTextView;
-        UITextField *_nameTextField;
-        NSDictionary *_drink;
-}
 
 @property (strong, nonatomic) id detailItem;
 @property (strong, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
