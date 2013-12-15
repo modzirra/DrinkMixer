@@ -25,6 +25,7 @@
 		736FBBD1182DD87600C15C9A /* DrinkDirections.plist in Resources */ = {isa = PBXBuildFile; fileRef = 736FBBD0182DD87600C15C9A /* DrinkDirections.plist */; };
 		736FBBD5182F3C0700C15C9A /* WDAddDrinkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 736FBBD4182F3C0700C15C9A /* WDAddDrinkViewController.m */; };
 		739429A6185CFB9000624CF8 /* WDEditDrinkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 739429A5185CFB9000624CF8 /* WDEditDrinkViewController.m */; };
+		739429AA185D5E4D00624CF8 /* Drink.m in Sources */ = {isa = PBXBuildFile; fileRef = 739429A9185D5E4D00624CF8 /* Drink.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,8 @@
 		736FBBD4182F3C0700C15C9A /* WDAddDrinkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDAddDrinkViewController.m; sourceTree = "<group>"; };
 		739429A4185CFB9000624CF8 /* WDEditDrinkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDEditDrinkViewController.h; sourceTree = "<group>"; };
 		739429A5185CFB9000624CF8 /* WDEditDrinkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDEditDrinkViewController.m; sourceTree = "<group>"; };
+		739429A8185D5E4D00624CF8 /* Drink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Drink.h; path = ../Drink.h; sourceTree = "<group>"; };
+		739429A9185D5E4D00624CF8 /* Drink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Drink.m; path = ../Drink.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,17 +127,11 @@
 		73014F19182DA686005BBBB2 /* DrinkMixer */ = {
 			isa = PBXGroup;
 			children = (
+				739429AB185D5E6700624CF8 /* Models */,
 				73014F22182DA686005BBBB2 /* WDAppDelegate.h */,
 				73014F23182DA686005BBBB2 /* WDAppDelegate.m */,
 				73014F25182DA686005BBBB2 /* Main.storyboard */,
-				73014F28182DA686005BBBB2 /* WDMasterViewController.h */,
-				73014F29182DA686005BBBB2 /* WDMasterViewController.m */,
-				73014F2B182DA686005BBBB2 /* WDDetailViewController.h */,
-				73014F2C182DA686005BBBB2 /* WDDetailViewController.m */,
-				739429A4185CFB9000624CF8 /* WDEditDrinkViewController.h */,
-				739429A5185CFB9000624CF8 /* WDEditDrinkViewController.m */,
-				736FBBD3182F3C0700C15C9A /* WDAddDrinkViewController.h */,
-				736FBBD4182F3C0700C15C9A /* WDAddDrinkViewController.m */,
+				739429AC185D5E8C00624CF8 /* Controllers */,
 				736FBBD2182DE28F00C15C9A /* DrinkConstants.h */,
 				73014F2E182DA686005BBBB2 /* Images.xcassets */,
 				73014F1A182DA686005BBBB2 /* Supporting Files */,
@@ -170,6 +167,30 @@
 				73014F3E182DA686005BBBB2 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		739429AB185D5E6700624CF8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				739429A8185D5E4D00624CF8 /* Drink.h */,
+				739429A9185D5E4D00624CF8 /* Drink.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		739429AC185D5E8C00624CF8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				73014F28182DA686005BBBB2 /* WDMasterViewController.h */,
+				73014F29182DA686005BBBB2 /* WDMasterViewController.m */,
+				73014F2B182DA686005BBBB2 /* WDDetailViewController.h */,
+				73014F2C182DA686005BBBB2 /* WDDetailViewController.m */,
+				739429A4185CFB9000624CF8 /* WDEditDrinkViewController.h */,
+				739429A5185CFB9000624CF8 /* WDEditDrinkViewController.m */,
+				736FBBD3182F3C0700C15C9A /* WDAddDrinkViewController.h */,
+				736FBBD4182F3C0700C15C9A /* WDAddDrinkViewController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +297,7 @@
 				739429A6185CFB9000624CF8 /* WDEditDrinkViewController.m in Sources */,
 				736FBBD5182F3C0700C15C9A /* WDAddDrinkViewController.m in Sources */,
 				73014F24182DA686005BBBB2 /* WDAppDelegate.m in Sources */,
+				739429AA185D5E4D00624CF8 /* Drink.m in Sources */,
 				73014F2A182DA686005BBBB2 /* WDMasterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

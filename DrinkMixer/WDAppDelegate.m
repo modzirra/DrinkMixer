@@ -7,12 +7,19 @@
 //
 
 #import "WDAppDelegate.h"
+#import "Drink.h"
 
 @implementation WDAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    Drink *drink = [[Drink alloc] init];
+    drink.nameTextField = nil;
+    drink.directionsTextView = nil;
+    drink.ingredientsTextView = nil;
+    
     return YES;
 }
 							

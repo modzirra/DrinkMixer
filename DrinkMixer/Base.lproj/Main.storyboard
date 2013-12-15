@@ -249,7 +249,7 @@
                                     </textView>
                                 </subviews>
                                 <connections>
-                                    <outlet property="delegate" destination="SZ8-GI-5Bn" id="ID8-NL-xUd"/>
+                                    <outlet property="delegate" destination="SZ8-GI-5Bn" id="NNH-EA-3Z3"/>
                                 </connections>
                             </scrollView>
                         </subviews>

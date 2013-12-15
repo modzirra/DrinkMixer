@@ -10,6 +10,7 @@
 #import "WDDetailViewController.h"
 #import "WDAddDrinkViewController.h"
 #import "DrinkConstants.h"
+#import "Drink.h"
 
 @interface WDMasterViewController ()
 {
@@ -41,7 +42,6 @@
     //path to user plist array
     NSString *documents = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     NSString *filePath = [NSString stringWithFormat:@"%@/drinks.plist", documents];
-
     
     if (_drinks == nil) {
         //first time loading app
@@ -74,8 +74,9 @@
     {
         self.drinks = [[NSMutableArray alloc] init];
     }
-    NSDictionary *drink = [[NSDictionary alloc] initWithObjectsAndKeys:@"",@"directions",@"",@"name",@"",@"ingredients", nil];
-    [self.drinks insertObject:drink atIndex:self.drinks.count];
+    self.drink = [[Drink alloc] init];
+    
+    [self.drinks insertObject:self.drink atIndex:self.drinks.count];
     
     [self performSegueWithIdentifier:(@"addItem") sender:self];
 }
@@ -125,7 +126,11 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    NSDictionary *pickedDrink = _drinks[indexPath.row];
+    self.drink.nameTextField = [pickedDrink objectForKey:NAME_KEY];
+    self.drink.ingredientsTextView = [pickedDrink objectForKey:INGREDIENTS_KEY];
+    self.drink.directionsTextView = [pickedDrink objectForKey:DIRECTIONS_KEY];
+    NSLog(@"Drink set");
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -134,8 +139,9 @@
     if ([[segue identifier] isEqualToString:@"showDetail"])
     {
         NSDictionary *pickedDrink = _drinks[indexPath.row];
+        
         [[segue destinationViewController] setDetailItem:pickedDrink];
-        [[segue destinationViewController] setDrink:[_drinks objectAtIndex:indexPath.row]];
+        [[segue destinationViewController] setDrink:self.drink];
     }
     if ([[segue identifier] isEqualToString:@"addItem"])
     {

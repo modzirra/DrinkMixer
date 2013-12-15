@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DrinkConstants.h"
+#import "Drink.h"
 
 @interface WDDetailViewController : UIViewController
 
@@ -16,7 +17,7 @@
 @property (nonatomic, strong) IBOutlet UITextView *ingredientsTextView;
 @property (nonatomic, strong) IBOutlet UITextView *directionsTextView;
 @property (nonatomic, strong) IBOutlet UITextField *nameTextField;
-@property (nonatomic, strong) NSDictionary *drink;
+@property (nonatomic, strong) Drink *drink;
 @property (nonatomic, strong) NSMutableArray *drinks;
 
 @end

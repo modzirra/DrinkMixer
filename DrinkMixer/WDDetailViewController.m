@@ -8,6 +8,7 @@
 
 #import "WDDetailViewController.h"
 #import "DrinkConstants.h"
+#import "Drink.h"
 
 @interface WDDetailViewController ()
 - (void)configureView;
@@ -21,26 +22,29 @@
 {
     if (_detailItem != newDetailItem) {
         _detailItem = newDetailItem;
-        
-        // Update the view.
-        [self configureView];
     }
+}
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    return self;
 }
 
 - (void)configureView
 {
     // Update the user interface for the detail item.
         //Set up UI with selected drink
-        self.nameTextField.text = [self.drink objectForKey:NAME_KEY];
-        self.ingredientsTextView.text = [self.drink objectForKey:INGREDIENTS_KEY];
-        self.directionsTextView.text = [self.drink objectForKey:DIRECTIONS_KEY];
+        self.nameTextField.text = self.drink.directionsTextView;
+        self.ingredientsTextView.text = self.drink.ingredientsTextView;
+        self.directionsTextView.text = self.drink.directionsTextView;
+        NSLog(@"Configure view drink is %@", self.nameTextField.text);
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    [self configureView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,6 +56,7 @@
 -(void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self configureView];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

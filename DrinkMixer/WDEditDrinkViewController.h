@@ -18,7 +18,6 @@
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
 @property BOOL keyboardIsVisible;
 @property (nonatomic, strong) NSMutableArray *drinks;
-@property (nonatomic, strong) NSMutableDictionary *drink;
-
+@property (nonatomic, strong) Drink *drink;
 
 @end

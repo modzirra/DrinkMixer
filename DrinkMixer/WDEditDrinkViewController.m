@@ -27,27 +27,27 @@
 {
     // Update the user interface for the detail item.
     //Set up UI with selected drink
-    self.nameTextField.text = [self.drink objectForKey:NAME_KEY];
-    self.ingredientsTextView.text = [self.drink objectForKey:INGREDIENTS_KEY];
-    self.directionsTextView.text = [self.drink objectForKey:DIRECTIONS_KEY];
+    self.nameTextField.text = self.drink.nameTextField;
+    self.ingredientsTextView.text = self.drink.ingredientsTextView;
+    self.directionsTextView.text = self.drink.directionsTextView;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-//    UIBarButtonItem *cancelButton = self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
-//                                                                                                                          target:self
-//                                                                                                                          action:@selector(cancel:)];
-//    
-//    UIBarButtonItem *saveButton = self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave
-//                                                                                                                         target:self
-//                                                                                                                         action:@selector(save:)];
-//    
-//    self.navigationItem.leftBarButtonItem = cancelButton;
-//    self.navigationItem.rightBarButtonItem = saveButton;
-//    
-//    _scrollView.contentSize = self.view.frame.size;
+    UIBarButtonItem *cancelButton = self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+                                                                                                                          target:self
+                                                                                                                          action:@selector(cancel:)];
+    
+    UIBarButtonItem *saveButton = self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave
+                                                                                                                         target:self
+                                                                                                                         action:@selector(save:)];
+    
+    self.navigationItem.leftBarButtonItem = cancelButton;
+    self.navigationItem.rightBarButtonItem = saveButton;
+    
+    _scrollView.contentSize = self.view.frame.size;
 }
 
 - (void)viewWillAppear: (BOOL) animated
@@ -123,6 +123,7 @@
 #pragma mark - Navigation Toolbar Buttons
 - (IBAction) save:(id)sender
 {
+    NSLog(@"save pressed!");
     //TODO: need to remove this drink from drinks array
     //get index of this drink
     NSUInteger drinkIndex = [self.drinks indexOfObject:self.drink];
@@ -140,6 +141,10 @@
     [editedDrink setObject:self.nameTextField.text forKey:@"name"];
     [editedDrink setObject:self.directionsTextView.text forKey:@"directions"];
     
+    NSString *drinkName = [editedDrink objectForKey:@"name"];
+    
+    NSLog(@"edited drink is %@", drinkName);
+    
     //add new dict to drinks array
     [self.drinks addObject:editedDrink];
     
@@ -151,8 +156,13 @@
     //empty old drinks array
     [super.drinks removeAllObjects];
     
-    //update the drinks list on master view
+    //update the drinks list on detail view
     [super.drinks addObjectsFromArray:sortedArray];
+
+    //update drink to edited drink on detail view
+    id sobj = super.drink.nameTextField;
+        // Do something with them
+        NSLog(@"super drink is %@", sobj);
     
     //save new plist data to custom plist in documents directory
     NSString *documents = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
@@ -165,6 +175,7 @@
 
 - (IBAction) cancel:(id)sender
 {
+    NSLog(@"cancel pressed!");
     //remove placeholder drink
     [self.drinks removeLastObject];
     [self.navigationController popViewControllerAnimated:YES];
